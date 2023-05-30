@@ -3,7 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      gridTemplateColumns: {},
+      gridTemplateColumns: {
+        list: "repeat(auto-fit, minmax(240px, 1fr))",
+      },
     },
   },
   plugins: [],
