@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { cartIcon, logoDark, logoStore, cartImg } from "assets/index";
 
 const Header = () => {
-  // const productData = useSelector((state) => state.bazar.productData);
+  const productsInCart = useSelector((state) => state.products.cart);
   // const userInfo = useSelector((state) => state.bazar.userInfo);
   return (
     <div className="w-full h-20 bg-white font-titleFont border-b-[1px] border-b-gray-800 sticky top-0 z-50 px-2">
@@ -38,7 +38,7 @@ const Header = () => {
             <div className="relative">
               <img className="w-6" src={cartIcon} alt="cartIcon" />
               <span className="absolute w-6 top-2 left-0 text-sm flex items-center justify-center font-semibold font-titleFont">
-                {/*{productData.length}*/}
+                {productsInCart.length}
               </span>
             </div>
           </Link>

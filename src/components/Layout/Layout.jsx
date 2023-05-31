@@ -5,7 +5,7 @@ import { Outlet, ScrollRestoration } from "react-router-dom";
 
 const Layout = () => {
   return (
-    <div>
+    <div className="flex flex-col min-h-[100vh]">
       <Header />
       <ScrollRestoration
         getKey={(location) => {

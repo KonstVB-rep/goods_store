@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import { ProductCard } from "../../../../components/ProductCard";
-import { useLoaderData } from "react-router-dom";
+import { Await, useLoaderData } from "react-router-dom";
 
 const ProductsList = () => {
   const [products, setProducts] = useState();
-  const data = useLoaderData();
+  const { data } = useLoaderData();
 
   useEffect(() => {
     setProducts(data);
@@ -25,9 +25,23 @@ const ProductsList = () => {
         </p>
       </div>
       <div className="max-w-screen-xl mx-auto grid grid-cols-list gap-6 py-10 px-4">
-        {products?.map((item) => (
-          <ProductCard key={item._id} product={item} />
-        ))}
+        <Suspense fallback={<h1 className="text-[50px]">Loading....</h1>}>
+          <Await
+            resolve={products}
+            // errorElement={<div>Could not load reviews 😬</div>}
+          >
+            {(resolvedData) => (
+              <>
+                {resolvedData?.map((item) => (
+                  <ProductCard key={item._id} product={item} />
+                ))}
+              </>
+            )}
+          </Await>
+        </Suspense>
+        {/*{products?.map((item) => (*/}
+        {/*  <ProductCard key={item._id} product={item} />*/}
+        {/*))}*/}
       </div>
     </div>
   );
