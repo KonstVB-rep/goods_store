@@ -4,7 +4,7 @@ import Login from "pages/Login";
 import Home from "../pages/Home";
 import Cart from "../pages/Cart";
 import Product from "../pages/Product";
-import { productsData } from "../api/api";
+import { productsData } from "../modules/ArticleProductsList/api/api";
 
 const router = createBrowserRouter([
   {

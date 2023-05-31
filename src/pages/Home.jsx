@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Banner } from "../components/Banner";
-import { ProductsList } from "../components/ProductsList";
-import { useLoaderData } from "react-router-dom";
+import { ProductsList } from "../modules/ArticleProductsList";
 
 const Home = () => {
-  const [products, setProducts] = useState();
-  const data = useLoaderData();
-
-  useEffect(() => {
-    setProducts(data);
-  }, []);
-
   return (
     <div>
       <Banner />
-      <ProductsList products={products} />
+      <ProductsList />
     </div>
   );
 };

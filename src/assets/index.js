@@ -1,6 +1,6 @@
 import logoDark from "./logoDark.png";
 import logoLight from "./logoLight.png";
-import cartIcon from "./cart.svg";
+import cartIcon from "./cart.png";
 import cartImg from "./cart.jpg";
 import paymentLogo from "./paymentLogo.png";
 import googleLogo from "./googleLogo.png";

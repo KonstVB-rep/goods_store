@@ -10,17 +10,20 @@ import {
 import { MdLocationOn } from "react-icons/md";
 import { BsPersonFill, BsPaypal } from "react-icons/bs";
 import { logoStore, paymentLogo } from "assets";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="bg-black text-[#949494] py-20 font-titleFont">
+    <div className="bg-black text-[#949494] py-20 px-2">
       <div className="max-w-screen-xl mx-auto grid grid-cols-4">
         <div className="flex flex-col gap-7">
-          <img
-            className="w-32 rounded-[40px]"
-            src={logoStore}
-            alt="logoStore"
-          />
+          <Link to="/">
+            <img
+              className="w-32 rounded-[40px]"
+              src={logoStore}
+              alt="logoStore"
+            />
+          </Link>
           <p className="text-white text-sm tracking-wide">© ReactBD.com</p>
           <img className="w-56" src={paymentLogo} alt="paymentLogo" />
           <div className="flex gap-5 text-lg text-gray-400">

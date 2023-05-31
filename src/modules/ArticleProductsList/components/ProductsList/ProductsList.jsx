@@ -1,8 +1,15 @@
-import React from "react";
-import { ProductCard } from "../ProductCard";
+import React, { useEffect, useState } from "react";
+import { ProductCard } from "../../../../components/ProductCard";
+import { useLoaderData } from "react-router-dom";
 
-const ProductsList = ({ products }) => {
-  console.log(products);
+const ProductsList = () => {
+  const [products, setProducts] = useState();
+  const data = useLoaderData();
+
+  useEffect(() => {
+    setProducts(data);
+  }, []);
+
   return (
     <div className="py-10">
       <div className="flex flex-col items-center gap-4">
@@ -19,7 +26,7 @@ const ProductsList = ({ products }) => {
       </div>
       <div className="max-w-screen-xl mx-auto grid grid-cols-list gap-6 py-10 px-4">
         {products?.map((item) => (
-          <ProductCard key={item._id} {...item} />
+          <ProductCard key={item._id} product={item} />
         ))}
       </div>
     </div>
