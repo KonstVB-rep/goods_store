@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.image-box:focus-visible .ant-image-mask{
+	opacity: 1;
+}
+.ant-image-preview-root .ant-image-preview-img{
+	max-width: 90%;
+	max-height: 90%;
+	border-radius: 5px;
+}
+.ant-image-preview-root .ant-image-preview-mask{
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.container{
+	margin: auto;
+	width: 100%;
+	padding: 0 10px;
+	max-width: 1280px;
+}
