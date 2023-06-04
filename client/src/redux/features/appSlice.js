@@ -3,11 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   cart: [],
   userInfo: null,
+  theme: "light",
 };
-const productsSlice = createSlice({
-  name: "products",
+const appSlice = createSlice({
+  name: "app",
   initialState,
   reducers: {
+    setTheme: (state) => {
+      state.theme = state.theme === "light" ? "dark" : "light";
+    },
     addToCart: {
       reducer: (state, { payload }) => {
         const item = state.cart.find((item) => item._id === payload._id);
@@ -61,6 +65,7 @@ export const {
   decrement,
   addUser,
   removeUser,
-} = productsSlice.actions;
+  setTheme,
+} = appSlice.actions;
 
-export default productsSlice.reducer;
+export default appSlice.reducer;

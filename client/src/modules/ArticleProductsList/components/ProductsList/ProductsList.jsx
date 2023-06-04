@@ -1,9 +1,10 @@
 import React, { useEffect, useState, Suspense } from "react";
-import { ProductCard } from "../../../../components/ProductCard";
+import { ProductCard } from "components/ProductCard";
 import { Await, useLoaderData } from "react-router-dom";
+import Preloader from "components/Preloader/Preloader";
 
 const ProductsList = () => {
-  const [products, setProducts] = useState();
+  const [products, setProducts] = useState([]);
   const { data } = useLoaderData();
 
   useEffect(() => {
@@ -11,7 +12,7 @@ const ProductsList = () => {
   }, []);
 
   return (
-    <div className="py-10">
+    <div className="py-10" id="shop">
       <div className="flex flex-col items-center gap-4">
         <h1 className="text-xl bg-black text-white py-2 w-full text-center uppercase">
           shopping everyday
@@ -24,8 +25,8 @@ const ProductsList = () => {
           asperiores repudiandae assumenda quidem.
         </p>
       </div>
-      <div className="max-w-screen-xl mx-auto grid grid-cols-list gap-6 py-10 px-4">
-        <Suspense fallback={<h1 className="text-[50px]">Loading....</h1>}>
+      <div className="max-w-screen-xl mx-auto grid grid-cols-sm gap-6 py-10 px-4 flex-grow">
+        <Suspense fallback={<Preloader />}>
           <Await resolve={products}>
             {(resolvedData) => (
               <>

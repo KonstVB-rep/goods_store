@@ -5,7 +5,7 @@ import useAuth from "./hooks/useAuth";
 import { googleLogo } from "../../assets";
 
 const SignInOut = () => {
-  const userInfo = useSelector((state) => state.products.userInfo);
+  const userInfo = useSelector((state) => state.app.userInfo);
 
   const { handleLogin, handleSignOut } = useAuth();
   return (
@@ -26,7 +26,7 @@ const SignInOut = () => {
       {userInfo && (
         <button
           onClick={handleSignOut}
-          className="bg-white text-gray-800 w-full text-base py-2 px-6 border-[1px] border-gray-400 tracking-wide rounded-3xl hover:bg-blue-600 hover:text-white duration-300 focus-visible::bg-blue-600 focus-visible::text-white active:scale-95"
+          className="bg-white text-gray-800 w-full text-base py-2 px-6 border-[1px] border-gray-400 dark:bg-black dark:text-white dark:border-white tracking-wide rounded-3xl hover:bg-blue-600 hover:text-white duration-300 focus-visible::bg-blue-600 focus-visible::text-white active:scale-95"
         >
           Sign Out
         </button>

@@ -1,82 +1,45 @@
-import React, { useMemo, useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { cartIcon, logoDark, logoStore, userLogo } from "assets/index";
-import { Button, Dropdown, Modal } from "antd";
-import SignInOut from "../SignInOut/SignInOut";
+import { logoStore } from "assets/index";
+import Nav from "./Nav/Nav";
+import { CartLink } from "./CartLink";
+import { Avatar } from "./Avatar";
+import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 const Header = () => {
-  const productsInCart = useSelector((state) => state.products.cart);
-  const [open, setOpen] = useState(false);
-  const userInfo = useSelector((state) => state.products.userInfo);
+  const [show, setShow] = useState(false);
 
   return (
-    <div className="w-full h-20 bg-white border-b-gray-800 sticky top-0 z-50">
-      <div className="container h-full  flex items-center justify-between">
-        <Link to="/">
-          <div>
-            <img className="w-28" src={logoStore} alt="logoStore" />
-          </div>
+    <div className="relative w-full pb-0 pt-4 sm_460:py-4 bg-white dark:bg-black sticky top-0 z-50 border-b-gray-800 border-b-[1px] border-white duration-300">
+      <div className="container flex-col sm:flex-row h-full flex items-center justify-between gap-2 sm_460:gap-4">
+        <Link to="/" className="rounded-[40px] overflow-hidden">
+          <img className="w-28" src={logoStore} alt="logoStore" />
         </Link>
-        <div className="flex items-center gap-8">
-          <ul className="flex item-center gap-8">
-            <Link to="/">
-              <li className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300">
-                Home
-              </li>
-            </Link>
-            <li className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300">
-              Pages
-            </li>
-            <li className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300">
-              Shop
-            </li>
-            <li className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300">
-              Element
-            </li>
-            <li className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300">
-              Blog
-            </li>
-          </ul>
-          <Link to="/cart">
-            <div className="relative">
-              <img className="w-6" src={cartIcon} alt="cartIcon" />
-              <span className="absolute w-6 top-2 left-0 text-sm flex items-center justify-center font-semibold font-titleFont">
-                {productsInCart.length}
-              </span>
+        <div className="w-full justify-center sm_460:w-max flex items-center gap-2 sm_460:gap-4">
+          <Nav />
+          <div className="p-[1px] bg-gray-900 h-10 dark:bg-white"></div>
+          <div className="flex gap-4">
+            <CartLink />
+            <div className="hidden sm_460:flex items-center gap-4">
+              <ThemeSwitcher />
+              <Avatar />
             </div>
-          </Link>
-          <Button className="p-0 border-none" onClick={() => setOpen(true)}>
-            <img
-              className="w-8 h-8 rounded-full"
-              src={userInfo ? userInfo.image : userLogo}
-              alt="userLogo"
-            />
-          </Button>
-          <Modal
-            centered
-            open={open}
-            onCancel={() => setOpen(false)}
-            width={400}
-            bodyStyle={{
-              height: "110px",
-              display: "flex",
-              alignItems: "center",
-              flexDirection: "column",
-              justifyContent: "center",
-            }}
-            className="h-[110px]"
-            footer={[]}
-          >
-            {userInfo?.name && (
-              <span className=" block py-4 font-lg text-center font-semibold uppercase">
-                {userInfo.name}
-              </span>
-            )}
-            <SignInOut />
-          </Modal>
+          </div>
         </div>
+        <button
+          onClick={() => setShow((p) => !p)}
+          className="flex sm_460:hidden text-black w-12 h-12 sm_460:flex justify-center items-center  dark:text-white"
+        >
+          {show ? <IoIosArrowUp /> : <IoIosArrowDown />}
+        </button>
       </div>
+      {show && (
+        <div className="absolute w-full opacity-0 bg-white dark:bg-black flex gap-4 justify-center sm_460:hidden pb-2 opacity-100 transition-opacity duration-300 border-b-gray-800 border-b-[1px] border-white">
+          <ThemeSwitcher />
+          <Avatar />
+        </div>
+      )}
     </div>
   );
 };

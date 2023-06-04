@@ -3,7 +3,7 @@ import { toast, ToastContainer } from "react-toastify";
 import { BsArrowRight } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import IconSale from "../IconsSale/IconSale";
-import { addToCart } from "../../redux/features/productsSlice";
+import { addToCart } from "../../redux/features/appSlice";
 import { useDispatch } from "react-redux";
 
 const ProductCard = ({ product }) => {
@@ -17,6 +17,7 @@ const ProductCard = ({ product }) => {
     navigate(`/product/${rootId}`, {
       state: {
         item: product,
+        loading: false,
       },
     });
   };
@@ -29,17 +30,18 @@ const ProductCard = ({ product }) => {
       <div
         role="link"
         aria-roledescription="go to the product page"
-        className="w-full h-96 cursor-pointer overflow-hidden "
+        className="w-full cursor-pointer overflow-hidden max-h-[370px]"
         onClick={() => handleDetails(product)}
       >
         <img
           className="w-full h-full group-hover:scale-110 duration-300 brightness-75 group-hover:brightness-100 group-focus-visible:brightness-100"
           src={image}
           alt="productImg"
+          loading="lazy"
         />
       </div>
-      <div className="w-full py-4 grow flex flex-col border-t-[1px] gap-2">
-        <div className="flex justify-between items-center grow min-h-[40px] gap-2 pr-2 bg-white">
+      <div className="w-full pb-4 grow flex flex-col border-t-[1px] gap-2 dark:bg-black/80">
+        <div className="flex justify-between items-center grow min-h-[40px] gap-2 pr-2 bg-white py-2 dark:bg-black/80 dark:text-white ">
           <h2
             className="font-titleFont text-base font-bold w-full pl-2 uppercase text-sm"
             onClick={handleDetails}
@@ -58,7 +60,7 @@ const ProductCard = ({ product }) => {
                 dispatch(addToCart(product)) &
                 toast.success(`${title} is added in cart`)
               }
-              className="absolute z-20 w-[100px] h-full shrink-0 rounded-3xl border-2 border-transparent text-white py-1 px-3 bg-black hover:bg-[#0958d9] focus-visible:bg-[#0958d9] focus-visible:border-gray-900 flex items-center gap-1 w-full justify-evenly top-0 transform -translate-x-32 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 focus-visible:translate-x-0 focus-visible:opacity-100 cursor-pointer duration-300 active:scale-95 "
+              className="absolute z-2 w-[100px] h-full shrink-0 rounded-3xl border-2 border-transparent text-white dark:text-black py-1 px-3 bg-gray-900 dark:bg-white/90 dark:hover:text-white dark:focus-visible:text-white dark:hover:bg-[#0958d9] dark:focus-visible:bg-[#0958d9] hover:bg-[#0958d9] focus-visible:bg-[#0958d9] focus-visible:border-gray-900 flex items-center gap-1 w-full justify-evenly top-0 transform -translate-x-32 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 focus-visible:translate-x-0 focus-visible:opacity-100 cursor-pointer duration-300 active:scale-95 "
             >
               <span className="uppercase text-[12px]">add to cart</span>
               <span>

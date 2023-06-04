@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {
   getAuth,
@@ -7,10 +6,9 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
-import { addUser, removeUser } from "../../../redux/features/productsSlice";
+import { addUser, removeUser } from "redux/features/appSlice";
 
 const useAuth = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const provider = new GoogleAuthProvider();
   const auth = getAuth();

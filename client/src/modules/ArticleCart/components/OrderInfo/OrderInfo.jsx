@@ -5,9 +5,9 @@ import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 
 const OrderInfo = () => {
-  const productsInCart = useSelector((state) => state.products.cart);
+  const productsInCart = useSelector((state) => state.app.cart);
   const [pay, setPay] = useState(false);
-  const userInfo = useSelector((state) => state.products.userInfo);
+  const userInfo = useSelector((state) => state.app.userInfo);
 
   const totalCount = productsInCart.reduce(
     (acc, item) => acc + item.quantity,
@@ -35,10 +35,12 @@ const OrderInfo = () => {
   };
 
   return (
-    <div className="w-1/3 bg-[#fafafa] py-6 px-4">
+    <div className="w-full lg:w-1/3 h-fit bg-gray-300 py-6 px-4 rounded-2xl dark:bg-[darkslategrey] dark:text-white">
       <div className=" flex flex-col gap-6 border-b-[1px] border-b-gray-400 pb-6">
-        <h2 className="text-2xl font-medium uppercase">cart totals</h2>
-        <p className="flex items-baseline gap-4 text-base">
+        <h2 className="text-2xl font-medium uppercase font-semibold">
+          cart totals
+        </h2>
+        <p className="flex items-baseline gap-2 text-base">
           Total quantity goods:{" "}
           <span className="font-titleFont font-bold text-lg">{totalCount}</span>
         </p>
@@ -55,7 +57,7 @@ const OrderInfo = () => {
       </p>
       <button
         onClick={handleCheckout}
-        className="text-base rounded-3xl bg-black text-white w-full py-3 mt-6 hover:bg-black/50 focus-visible:bg-black/50 active:bg-black active:scale-90 duration-300 uppercase"
+        className="text-base max-w-[220px] px-4 block m-auto rounded-3xl bg-black text-white w-full py-3 mt-6 hover:bg-black/50 focus-visible:bg-black/50 active:bg-black active:scale-90 duration-300 uppercase"
       >
         proceed to checkout
       </button>
