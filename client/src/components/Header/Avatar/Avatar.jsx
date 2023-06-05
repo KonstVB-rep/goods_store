@@ -3,10 +3,11 @@ import { Button, Modal } from "antd";
 import SignInOut from "../../SignInOut/SignInOut";
 import { useSelector } from "react-redux";
 import { RxAvatar } from "react-icons/rx";
+import { selectUser } from "redux/features/appSlice";
 
 const Avatar = () => {
   const [open, setOpen] = useState(false);
-  const userInfo = useSelector((state) => state.app.userInfo);
+  const userInfo = useSelector(selectUser);
 
   return (
     <>
@@ -34,11 +35,9 @@ const Avatar = () => {
         className="h-[110px]"
         footer={[]}
       >
-        {userInfo?.name && (
-          <span className="block py-4 font-lg text-center font-bold uppercase">
-            {userInfo.name}
-          </span>
-        )}
+        <span className="block py-4 font-lg text-center font-bold uppercase">
+          {userInfo?.name || "**********"}
+        </span>
         <SignInOut />
       </Modal>
     </>

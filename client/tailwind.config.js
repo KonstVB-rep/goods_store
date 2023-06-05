@@ -1,14 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "class",
+  darkMode: ["class", '[data-theme="dark"]'],
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       screens: {
         sm_460: "460px",
+        sm_540: "540px",
       },
       boxShadow: {
-        top: "-2px -2px 10px 1px rgba(0, 0, 0, 0.5)",
+        xl_top:
+          " 0 -20px 25px -5px rgb(0 0 0 / 0.1), 0 -8px 10px -6px rgb(0 0 0 / 0.1)",
+        y: "0 -20px 25px -5px rgb(0 0 0 / 0.1), 0 -8px 10px -6px rgb(0 0 0 / 0.1),0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
       },
       gridTemplateColumns: {
         sm: "repeat(auto-fit, minmax(240px, 1fr))",

@@ -3,7 +3,7 @@ import { Header } from "../Header";
 import { Footer } from "../Footer";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import { createPortal } from "react-dom";
-import { ScrollUpArrow } from "../ScrollUpArrow";
+import { ScrollUpArrow } from "../UI/ScrollUpArrow";
 
 const Layout = () => {
   return (

@@ -1,6 +1,7 @@
 import React from "react";
 import { cartBanner } from "../assets";
 import { CartList } from "../modules/ArticleCart";
+import ResetCart from "../modules/ArticleCart/components/ResetCart/ResetCart";
 
 const Cart = () => {
   return (
@@ -11,6 +12,7 @@ const Cart = () => {
         alt="cartImg"
       />
       <CartList />
+      <ResetCart />
     </div>
   );
 };

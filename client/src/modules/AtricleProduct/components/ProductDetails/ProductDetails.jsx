@@ -7,7 +7,7 @@ const ProductDetails = ({
   return (
     <>
       <div className="flex flex-col gap-4">
-        <h2 className="text-2xl sm:text-4xl font-semibold dark:text-white">
+        <h2 className="text-2xl sm:text-4xl pt-2 font-semibold dark:text-white">
           {title}
         </h2>
         <p className="text-base text-gray-500 uppercase">
@@ -36,7 +36,21 @@ const ProductDetails = ({
           </p>
         </div>
       </div>
-      <p className="text-base text-gray-500 -mt-3 dark:text-white">{des}</p>
+      <p className="text-base text-gray-500 -mt-3 dark:text-white">
+        {des}
+        <span className="block mt-2">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
+          asperiores eius hic illum nostrum rem! Facere iusto nobis non optio
+          quia quo, voluptas. Aliquam hic nesciunt obcaecati placeat quas
+          voluptas.
+        </span>
+        <span className="block mt-2">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
+          asperiores eius hic illum nostrum rem! Facere iusto nobis non optio
+          quia quo, voluptas. Aliquam hic nesciunt obcaecati placeat quas
+          voluptas.
+        </span>
+      </p>
     </>
   );
 };

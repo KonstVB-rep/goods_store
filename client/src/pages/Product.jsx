@@ -1,10 +1,10 @@
-import React, { useEffect, useState, Suspense } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useLocation } from "react-router-dom";
 import ProductImage from "../modules/AtricleProduct/components/ProductImage/ProductImage";
 import ProductDetails from "../modules/AtricleProduct/components/ProductDetails/ProductDetails";
 import { AddButton } from "../components/UI/AddButton";
-import Preloader from "../components/Preloader/Preloader";
+import Preloader from "../components/UI/Preloader/Preloader";
 
 const Product = () => {
   const [product, setProduct] = useState({});
@@ -15,20 +15,21 @@ const Product = () => {
   } = useLocation();
 
   const { image, title, oldPrice, price, des, category, isNew } = product;
+
   useEffect(() => {
     setProduct(item);
     setLoad(loading);
     return () => setLoad(true);
-  }, []);
-  console.log(image);
+  }, [loading, item]);
+
   return (
-    <div className="w-full flex-col items-center md:flex-row  max-w-screen-xl mx-auto my-10 flex gap-10 px-4 flex-grow">
+    <div className="w-full flex-col items-center md:flex-row md:px-4 max-w-screen-xl mx-auto my-10 flex gap-10 px-4 flex-grow">
       {load ? (
         <Preloader />
       ) : (
         <>
           <ProductImage image={image} isNew={isNew} />
-          <div className="w-[90%] md:w-3/5 flex flex-col justify-start gap-10">
+          <div className="w-full md:w-3/5 flex flex-col md:self-stretch justify-start gap-10 px-4 md:p-4 shadow-xl_top rounded-2xl dark:shadow-white/20">
             <ProductDetails
               details={{ title, oldPrice, price, des, category }}
             />

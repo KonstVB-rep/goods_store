@@ -1,10 +1,10 @@
 import React from "react";
 import { toast, ToastContainer } from "react-toastify";
-import { BsArrowRight } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-import IconSale from "../IconsSale/IconSale";
-import { addToCart } from "../../redux/features/appSlice";
+import IconSale from "components/IconsSale/IconSale";
+import { addToCart } from "redux/features/appSlice";
 import { useDispatch } from "react-redux";
+import { Button } from "components/UI/Button";
 
 const ProductCard = ({ product }) => {
   const { image, title, oldPrice, price, category, isNew, brand } = product;
@@ -30,11 +30,11 @@ const ProductCard = ({ product }) => {
       <div
         role="link"
         aria-roledescription="go to the product page"
-        className="w-full cursor-pointer overflow-hidden max-h-[370px]"
+        className="w-full cursor-pointer overflow-hidden max-h-[370px] h-[70%]"
         onClick={() => handleDetails(product)}
       >
         <img
-          className="w-full h-full group-hover:scale-110 duration-300 brightness-75 group-hover:brightness-100 group-focus-visible:brightness-100"
+          className="w-full h-full object-cover group-hover:scale-110 duration-300 brightness-75 group-hover:brightness-100 group-focus-visible:brightness-100"
           src={image}
           alt="productImg"
           loading="lazy"
@@ -43,7 +43,7 @@ const ProductCard = ({ product }) => {
       <div className="w-full pb-4 grow flex flex-col border-t-[1px] gap-2 dark:bg-black/80">
         <div className="flex justify-between items-center grow min-h-[40px] gap-2 pr-2 bg-white py-2 dark:bg-black/80 dark:text-white ">
           <h2
-            className="font-titleFont text-base font-bold w-full pl-2 uppercase text-sm"
+            className="font-titleFont text-base font-bold w-full pl-2 uppercase text-sm h-12"
             onClick={handleDetails}
           >
             {title?.substring(0, 15)}
@@ -55,18 +55,15 @@ const ProductCard = ({ product }) => {
               ) : null}
               <p className="font-semibold">${price}</p>
             </div>
-            <button
+            <Button
               onClick={() =>
                 dispatch(addToCart(product)) &
                 toast.success(`${title} is added in cart`)
               }
-              className="absolute z-2 w-[100px] h-full shrink-0 rounded-3xl border-2 border-transparent text-white dark:text-black py-1 px-3 bg-gray-900 dark:bg-white/90 dark:hover:text-white dark:focus-visible:text-white dark:hover:bg-[#0958d9] dark:focus-visible:bg-[#0958d9] hover:bg-[#0958d9] focus-visible:bg-[#0958d9] focus-visible:border-gray-900 flex items-center gap-1 w-full justify-evenly top-0 transform -translate-x-32 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 focus-visible:translate-x-0 focus-visible:opacity-100 cursor-pointer duration-300 active:scale-95 "
+              styles="rounded-full min-w-[100px] h-full absolute z-2 shrink-0 justify-evenly top-0 transform -translate-x-32 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 focus-visible:translate-x-0 focus-visible:opacity-100 cursor-pointer duration-300"
             >
-              <span className="uppercase text-[12px]">add to cart</span>
-              <span>
-                <BsArrowRight />
-              </span>
-            </button>
+              <span className="uppercase text-[12px] font-semibold">buy</span>
+            </Button>
           </div>
         </div>
         <div className="flex flex-col gap-1">

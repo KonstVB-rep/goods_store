@@ -4,7 +4,7 @@ import { logoStore } from "assets/index";
 import Nav from "./Nav/Nav";
 import { CartLink } from "./CartLink";
 import { Avatar } from "./Avatar";
-import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
+import ThemeSwitcher from "../UI/ThemeSwitcher/ThemeSwitcher";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 const Header = () => {

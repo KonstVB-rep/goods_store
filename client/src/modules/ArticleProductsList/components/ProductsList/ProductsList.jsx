@@ -1,15 +1,17 @@
 import React, { useEffect, useState, Suspense } from "react";
-import { ProductCard } from "components/ProductCard";
+import { ProductCard } from "modules/ArticleProductsList/components/ProductCard";
 import { Await, useLoaderData } from "react-router-dom";
-import Preloader from "components/Preloader/Preloader";
+import Preloader from "components/UI/Preloader/Preloader";
 
 const ProductsList = () => {
   const [products, setProducts] = useState([]);
   const { data } = useLoaderData();
 
   useEffect(() => {
-    setProducts(data);
-  }, []);
+    if (data) {
+      setProducts(data);
+    }
+  }, [data]);
 
   return (
     <div className="py-10" id="shop">

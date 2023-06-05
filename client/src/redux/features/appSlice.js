@@ -9,8 +9,8 @@ const appSlice = createSlice({
   name: "app",
   initialState,
   reducers: {
-    setTheme: (state) => {
-      state.theme = state.theme === "light" ? "dark" : "light";
+    setTheme: (state, { payload }) => {
+      state.theme = payload;
     },
     addToCart: {
       reducer: (state, { payload }) => {
@@ -67,5 +67,9 @@ export const {
   removeUser,
   setTheme,
 } = appSlice.actions;
+
+export const selectTheme = (state) => state.app.theme;
+export const selectProductsInCart = (state) => state.app.cart;
+export const selectUser = (state) => state.app.userInfo;
 
 export default appSlice.reducer;

@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { CiSquareMinus, CiSquarePlus } from "react-icons/ci";
-import { decrement, increment } from "../../redux/features/appSlice";
+import { decrement, increment } from "../../../redux/features/appSlice";
 import { useDispatch } from "react-redux";
 
 const SwitcherQuantity = memo(({ id, quantity }) => {

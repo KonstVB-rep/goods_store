@@ -39,7 +39,7 @@ const ErrorElement = () => {
   }
 
   return (
-    <div className="flex-grow flex flex-col font-2xl m-auto font-senibold">
+    <div className="flex-grow flex flex-col font-2xl m-auto font-bold">
       <span>Something went wrong!</span>
       <span>Status text: {error.statusText}</span>
     </div>
