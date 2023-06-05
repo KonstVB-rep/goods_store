@@ -1,7 +1,7 @@
 import React from "react";
 import { cartBanner } from "../assets";
-import { CartList } from "../modules/ArticleCart";
-import ResetCart from "../modules/ArticleCart/components/ResetCart/ResetCart";
+import { CartContent } from "../modules/ArticleCart";
+import { ResetCart } from "../modules/ArticleCart";
 
 const Cart = () => {
   return (
@@ -11,7 +11,7 @@ const Cart = () => {
         src={cartBanner}
         alt="cartImg"
       />
-      <CartList />
+      <CartContent />
       <ResetCart />
     </div>
   );
