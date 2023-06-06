@@ -3,6 +3,9 @@ module.exports = {
   darkMode: ["class", '[data-theme="dark"]'],
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    fontSize: {
+      stretchable: "clamp(1.5rem,3vw, 4rem)",
+    },
     extend: {
       screens: {
         sm_460: "460px",

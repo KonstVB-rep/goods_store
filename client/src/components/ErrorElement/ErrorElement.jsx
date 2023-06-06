@@ -1,48 +1,35 @@
 import React from "react";
 import { isRouteErrorResponse, useRouteError } from "react-router-dom";
+import Container from "./Container/Container";
 
 const ErrorElement = () => {
   const error = useRouteError();
 
+  console.log(error);
+
   if (isRouteErrorResponse(error)) {
     if (error.status === 404) {
-      return (
-        <div className="flex-grow flex flex-col font-2xl m-auto font-senibold">
-          This page doesn't exist!
-        </div>
-      );
+      return <Container>This page doesn't exist!</Container>;
     }
 
     if (error.status === 401) {
-      return (
-        <div className="flex-grow flex flex-col font-2xl m-auto font-senibold">
-          You aren't authorized to see this
-        </div>
-      );
+      return <Container>You aren't authorized to see this</Container>;
     }
 
     if (error.status === 503) {
-      return (
-        <div className="flex-grow flex flex-col font-2xl m-auto font-senibold">
-          Looks like our API is down
-        </div>
-      );
+      return <Container>Looks like our API is down</Container>;
     }
 
     if (error.status === 418) {
-      return (
-        <div className="flex-grow flex flex-col font-2xl m-auto font-senibold">
-          🫖
-        </div>
-      );
+      return <Container>🫖</Container>;
     }
   }
 
   return (
-    <div className="flex-grow flex flex-col font-2xl m-auto font-bold">
+    <Container>
       <span>Something went wrong!</span>
-      <span>Status text: {error.statusText}</span>
-    </div>
+      {error.statusText && <span>Status text: {error.statusText}</span>}
+    </Container>
   );
 };
 

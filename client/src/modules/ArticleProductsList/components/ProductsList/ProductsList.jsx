@@ -32,7 +32,7 @@ const ProductsList = () => {
           <Await resolve={products}>
             {(resolvedData) => (
               <>
-                {resolvedData?.map((item) => (
+                {resolvedData.map((item) => (
                   <ProductCard key={item._id} product={item} />
                 ))}
               </>

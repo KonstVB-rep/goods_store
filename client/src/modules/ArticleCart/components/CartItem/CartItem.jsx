@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { Image } from "antd";
 import SwitcherQuantity from "components/UI/SwitcherQuantity/SwitcherQuantity";
 import { RiCloseCircleFill } from "react-icons/ri";
@@ -11,7 +11,6 @@ const box = {
   initial: {
     opacity: 0,
     y: -50,
-    // transition: { duration: 0.3 },
   },
   animate: {
     opacity: 1,
@@ -19,7 +18,7 @@ const box = {
     transition: { duration: 0.3 },
   },
   exit: {
-    display: "none",
+    opacity: 0,
   },
 };
 

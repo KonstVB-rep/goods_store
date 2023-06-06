@@ -49,11 +49,11 @@ const router = createBrowserRouter([
             <Cart />
           </Suspense>
         ),
-        errorElement: (
-          <Suspense fallback={<Preloader />}>
-            <ErrorElement />
-          </Suspense>
-        ),
+        // errorElement: (
+        //   <Suspense fallback={<Preloader />}>
+        //     <ErrorElement />
+        //   </Suspense>
+        // ),
       },
     ],
   },
