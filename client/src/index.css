@@ -135,10 +135,3 @@ img {
     background-position: 50% 36px;
   }
 }
-
-.ant-image {
-  height: 100%;
-}
-.ant-image .ant-image-img {
-  height: inherit;
-}

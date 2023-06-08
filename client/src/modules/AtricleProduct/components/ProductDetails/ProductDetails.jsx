@@ -6,8 +6,8 @@ const ProductDetails = ({
 }) => {
   return (
     <>
-      <div className="flex flex-col gap-4">
-        <h2 className="text-2xl sm:text-4xl pt-2 font-semibold dark:text-white">
+      <div className="flex flex-col gap-4 self-stretch">
+        <h2 className="text-2xl sm:text-4xl pt-2 font-bold dark:text-white">
           {title}
         </h2>
         <p className="text-base text-gray-500 uppercase">
@@ -16,14 +16,14 @@ const ProductDetails = ({
             {category}
           </span>
         </p>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           <Rate
             allowHalf
             defaultValue={3.5}
             allowClear={false}
-            className="px-2 rounded-2xl pb-1 dark:bg-white"
+            className="px-2 rounded-2xl pb-1 dark:bg-white flex-shrink-0"
           />
-          <p className="text-xs text-gray-500 dark:text-white">
+          <p className="text-xs text-gray-500 dark:text-white flex-shrink-0">
             (1 Customer review)
           </p>
         </div>

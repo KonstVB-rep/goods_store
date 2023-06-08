@@ -23,13 +23,13 @@ const Product = () => {
   }, [loading, item]);
 
   return (
-    <div className="w-full flex-col items-center md:flex-row md:px-4 max-w-screen-xl mx-auto my-10 flex gap-10 px-4 flex-grow">
+    <div className="w-full flex-col items-center lg:flex-row lg:px-4 max-w-screen-xl mx-auto my-10 flex gap-10 px-4 flex-grow">
       {load ? (
         <Preloader />
       ) : (
         <>
           <ProductImage image={image} isNew={isNew} />
-          <div className="w-full md:w-3/5 flex flex-col md:self-stretch justify-start gap-10 px-4 md:p-4 shadow-xl_top rounded-2xl dark:shadow-white/20">
+          <div className="w-full flex flex-col justify-start gap-10 px-4 md:p-4 shadow-xl_top rounded-2xl dark:shadow-white/20">
             <ProductDetails
               details={{ title, oldPrice, price, des, category }}
             />

@@ -20,6 +20,9 @@ module.exports = {
         sm: "repeat(auto-fit, minmax(240px, 1fr))",
         md: "repeat(auto-fit, minmax(280px, 1fr))",
       },
+      gridTemplateRows: {
+        basic: "minmax(380px, 1fr)",
+      },
     },
   },
   plugins: [],

@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import { productsData } from "../modules/ArticleProductsList/api/api";
 // import { ErrorElement } from "../components/ErrorElement";
 import Preloader from "../components/UI/Preloader/Preloader";
+import NotFoundPage from "../pages/NotFoundPage";
 
 const Cart = lazy(() => import("../pages/Cart"));
 const Product = lazy(() => import("../pages/Product"));
@@ -49,11 +50,15 @@ const router = createBrowserRouter([
             <Cart />
           </Suspense>
         ),
-        // errorElement: (
-        //   <Suspense fallback={<Preloader />}>
-        //     <ErrorElement />
-        //   </Suspense>
-        // ),
+        errorElement: (
+          <Suspense fallback={<Preloader />}>
+            <ErrorElement />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/*",
+        element: <NotFoundPage />,
       },
     ],
   },

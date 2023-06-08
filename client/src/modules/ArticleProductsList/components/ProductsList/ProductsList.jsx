@@ -1,7 +1,7 @@
-import React, { useEffect, useState, Suspense } from "react";
-import { ProductCard } from "modules/ArticleProductsList/components/ProductCard";
+import React, { Suspense, useEffect, useState } from "react";
 import { Await, useLoaderData } from "react-router-dom";
 import Preloader from "components/UI/Preloader/Preloader";
+import { ProductCard } from "../ProductCard";
 
 const ProductsList = () => {
   const [products, setProducts] = useState([]);
@@ -27,7 +27,7 @@ const ProductsList = () => {
           asperiores repudiandae assumenda quidem.
         </p>
       </div>
-      <div className="max-w-screen-xl mx-auto grid grid-cols-sm gap-6 py-10 px-4 flex-grow">
+      <div className="max-w-screen-xl mx-auto grid grid-cols-sm grid-rows-basic gap-6 py-10 px-4 flex-grow">
         <Suspense fallback={<Preloader />}>
           <Await resolve={products}>
             {(resolvedData) => (

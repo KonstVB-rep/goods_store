@@ -23,6 +23,7 @@ const Banner = () => {
             className="w-screen min-h-full object-cover"
             src={data[0]}
             alt="SlideOne"
+            loading="eager"
           />
           <img
             className="w-screen min-h-full object-cover"

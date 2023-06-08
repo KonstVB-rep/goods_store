@@ -10,11 +10,7 @@ const Layout = () => {
     <div className="flex flex-col min-h-[100vh]">
       <Header />
       {createPortal(<ScrollUpArrow />, document.getElementById("root"))}
-      <ScrollRestoration
-        getKey={(location) => {
-          return location.pathname;
-        }}
-      />
+      <ScrollRestoration />
       <Outlet />
       <Footer />
     </div>

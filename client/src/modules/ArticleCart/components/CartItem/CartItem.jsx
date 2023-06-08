@@ -56,7 +56,7 @@ const CartItem = ({ item }) => {
         variants={box}
       >
         <div className="relative flex flex-col sm_540:flex-row sm_540:h-60 md:max-w-none text-center gap-2 items-center justify-between rounded-xl bg-gray-200 p-2 dark:bg-[darkslategrey] dark:text-white">
-          <div className="flex items-center rounded-xl overflow-hidden flex-shrink-0 md:h-full">
+          <div className="flex items-center rounded-xl overflow-hidden flex-shrink-0 md:h-full bg-gradient-to-r from-gray-300 to-gray-300">
             <Image src={item.image} rootClassName="w-52" />
           </div>
           <div className="flex gap-2 flex-col md:flex-row items-center sm_540:pt-6 flex-grow">

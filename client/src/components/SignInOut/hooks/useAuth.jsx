@@ -6,6 +6,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { addUser, removeUser } from "redux/features/appSlice";
+import { useCallback } from "react";
 
 const useAuth = () => {
   const dispatch = useDispatch();

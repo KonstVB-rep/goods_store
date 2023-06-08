@@ -11,19 +11,25 @@ const ThemeSwitcher = () => {
   const theme = useSelector(selectTheme);
 
   useEffect(() => {
-    if (
-      theme === "dark" ||
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      document.body.dataset.theme = "dark";
-    } else {
-      document.body.dataset.theme = "light";
-    }
-  }, [theme]);
+    const isDarkSystemTheme = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    const isDark = theme === "dark" || isDarkSystemTheme;
+    const currTheme = (document.body.dataset.theme = isDark ? "dark" : "light");
+    dispatch(setTheme(currTheme));
+  }, []);
 
   const switchTheme = (value) => {
     document.body.dataset.theme = value;
     dispatch(setTheme(value));
+  };
+
+  const setSystemTheme = () => {
+    const isDark = window.matchMedia("(prefers-color-scheme: dark)")
+      ? "dark"
+      : "light";
+    dispatch(setTheme(isDark));
+    document.body.dataset.theme = isDark;
   };
 
   const items = useMemo(
@@ -54,7 +60,7 @@ const ThemeSwitcher = () => {
       },
       {
         label: (
-          <button className="flex gap-2 items-center">
+          <button className="flex gap-2 items-center" onClick={setSystemTheme}>
             <GrSystem className="dark:bg-white" />
             <span className="dark:text-white">System </span>
           </button>
