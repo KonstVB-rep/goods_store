@@ -35,7 +35,9 @@ img {
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
-
+.image-box {
+  min-height: 400px;
+}
 .image-box:focus-visible .ant-image-mask {
   opacity: 1;
 }

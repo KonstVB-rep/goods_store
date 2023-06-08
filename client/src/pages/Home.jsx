@@ -5,7 +5,7 @@ import { ProductsList } from "../modules/ArticleProductsList";
 const Home = () => {
   return (
     <div className="flex flex-col flex-grow">
-      {/*<Banner />*/}
+      <Banner />
       <ProductsList />
     </div>
   );

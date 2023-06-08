@@ -3,7 +3,6 @@ import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "../components/Layout";
 import Home from "../pages/Home";
 import { productsData } from "../modules/ArticleProductsList/api/api";
-// import { ErrorElement } from "../components/ErrorElement";
 import Preloader from "../components/UI/Preloader/Preloader";
 import NotFoundPage from "../pages/NotFoundPage";
 

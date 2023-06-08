@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import { motion } from "framer-motion";
+
 import { useLocation } from "react-router-dom";
 import ProductImage from "../modules/AtricleProduct/components/ProductImage/ProductImage";
 import ProductDetails from "../modules/AtricleProduct/components/ProductDetails/ProductDetails";
@@ -29,12 +31,17 @@ const Product = () => {
       ) : (
         <>
           <ProductImage image={image} isNew={isNew} />
-          <div className="w-full flex flex-col justify-start gap-10 px-4 md:p-4 shadow-xl_top rounded-2xl dark:shadow-white/20">
+          <motion.div
+            animate={{ opacity: 1, display: "flex", y: 0 }}
+            initial={{ opacity: 0, display: "none", y: 100 }}
+            transition={{ ease: "easeOut", duration: 0.5 }}
+            className="w-full flex flex-col justify-start gap-10 px-4 md:p-4 shadow-xl_top rounded-2xl dark:shadow-white/20"
+          >
             <ProductDetails
               details={{ title, oldPrice, price, des, category }}
             />
             <AddButton product={product} />
-          </div>
+          </motion.div>
         </>
       )}
     </div>

@@ -7,7 +7,7 @@ const ProductDetails = ({
   return (
     <>
       <div className="flex flex-col gap-4 self-stretch">
-        <h2 className="text-2xl sm:text-4xl pt-2 font-bold dark:text-white">
+        <h2 className="text-[20px] sm:text-[40px] pt-2 font-bold dark:text-white">
           {title}
         </h2>
         <p className="text-base text-gray-500 uppercase">

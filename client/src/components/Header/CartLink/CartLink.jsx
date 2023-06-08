@@ -7,14 +7,14 @@ const CartLink = () => {
 
   return (
     <>
-      <Link to="/cart" className="flex-shrink-0 relative h-10 w-10 p-1">
+      <Link to="/cart" className="flex-shrink-0 relative h-14 w-12 p-1">
         <svg
           className="w-full h-full dark:fill-white"
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
           y="0px"
-          viewBox="0 0 33 33"
+          viewBox="0 0 32 32"
         >
           <g>
             <path
@@ -29,7 +29,7 @@ const CartLink = () => {
             />
           </g>
         </svg>
-        <span className="absolute w-6 dark:text-white top-3 left-2 text-sm flex items-center justify-center font-semibold font-titleFont">
+        <span className="absolute w-6 dark:text-white top-5 left-3 text-sm flex items-center justify-center font-semibold font-titleFont">
           {productsInCart.length}
         </span>
       </Link>
