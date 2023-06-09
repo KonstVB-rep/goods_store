@@ -76,7 +76,7 @@ const CartItem = ({ item }) => {
                   ${(item.quantity * item.price).toFixed(2)}
                 </p>
               </div>
-              <button className=" dark:text-white absolute top-0 right-0 text-xl text-gray-600 h-10 w-10 p-2 hover:text-red-500 hover:scale-110 focus-visible:text-red-500 focus-visible:scale-110 cursor-pointer active:scale-90 dark:text-white dark:hover:text-red-500 dark:focus-visible:text-red-500 duration-200">
+              <button className=" dark:text-white absolute top-0 right-0 text-xl text-gray-600 h-10 w-10 p-2 hover:text-red-500 hover:scale-110 focus-visible:text-red-500 focus-visible:scale-110 cursor-pointer dark:text-white dark:hover:text-red-500 dark:focus-visible:text-red-500">
                 <RiCloseCircleFill
                   onClick={removeProductInCart}
                   className="w-full h-full"

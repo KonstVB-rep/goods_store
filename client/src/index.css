@@ -29,12 +29,22 @@ body {
   color: white;
 }
 
-button,
-a,
 img {
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
+
+button:active,
+a:not(.logo):active {
+  scale: 0.9;
+}
+button,
+a {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.2s ease-in-out;
+}
+
 .image-box {
   min-height: 400px;
 }
@@ -136,4 +146,9 @@ img {
     transform: rotate(360deg);
     background-position: 50% 36px;
   }
+}
+
+.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item:hover,
+.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item:focus-visible {
+  background-color: #9ca3af;
 }

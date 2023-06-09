@@ -11,7 +11,7 @@ const ProductsList = () => {
     if (data) {
       setProducts(data);
     }
-  }, [data]);
+  }, []);
 
   return (
     <div className="py-10" id="shop">

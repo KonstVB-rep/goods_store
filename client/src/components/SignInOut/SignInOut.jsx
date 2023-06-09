@@ -15,7 +15,7 @@ const SignInOut = () => {
       {!userInfo && (
         <button
           onClick={handleLogin}
-          className="text-base w-60 h-12 tracking-wide border-[1px] text-gray-800 border-gray-400 rounded-3xl flex items-center justify-center gap-2 cursor-pointer duration-300 hover:bg-blue-600 hover:text-white focus-visible::bg-blue-600 focus-visible::text-white active:scale-95"
+          className="text-base w-60 h-12 tracking-wide border-[1px] text-gray-800 border-gray-400 rounded-3xl flex items-center justify-center gap-2 cursor-pointer hover:bg-blue-600 hover:text-white focus-visible::bg-blue-600 focus-visible::text-white"
         >
           <img
             className="w-8 p-1 bg-white rounded-full"
@@ -28,7 +28,7 @@ const SignInOut = () => {
       {userInfo && (
         <button
           onClick={handleSignOut}
-          className="text-base w-60 h-12 tracking-wide border-[1px] text-gray-800 border-gray-400 rounded-3xl flex items-center justify-center gap-2 cursor-pointer duration-300 hover:bg-blue-600 hover:text-white focus-visible::bg-blue-600 focus-visible::text-white active:scale-95"
+          className="text-base w-60 h-12 tracking-wide border-[1px] text-gray-800 border-gray-400 rounded-3xl flex items-center justify-center gap-2 cursor-pointer hover:bg-blue-600 hover:text-white focus-visible::bg-blue-600 focus-visible::text-white"
         >
           Sign Out
         </button>

@@ -1,23 +1,45 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { ImGithub } from "react-icons/im";
 import {
   FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaYoutube,
   FaHome,
+  FaInstagram,
+  FaTwitter,
+  FaYoutube,
 } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
-import { BsPersonFill, BsPaypal } from "react-icons/bs";
+import { BsPaypal, BsPersonFill } from "react-icons/bs";
 import { logoStore, paymentLogo } from "assets";
 import { Link } from "react-router-dom";
+import { nanoid } from "@reduxjs/toolkit";
+
+const socialIcons = [
+  <ImGithub className="duration-300" />,
+  <FaYoutube className="duration-300" />,
+  <FaFacebookF className="duration-300" />,
+  <FaTwitter className="duration-300" />,
+  <FaInstagram className="duration-300" />,
+];
 
 const Footer = () => {
+  const renderSocial = useMemo(
+    () =>
+      socialIcons.map((icon) => (
+        <button
+          key={nanoid()}
+          className="p-2 rounded-full hover:bg-gray-400 focus-visible:bg-gray-400 hover:text-black cursor-pointer"
+        >
+          {icon}
+        </button>
+      )),
+    []
+  );
+
   return (
     <div className="bg-black text-[#949494] pt-10 border-t-[1px] border-white">
       <div className="container flex flex-col md:flex-row justify-evenly gap-4 items-center px-4">
         <div className="flex gap-4 flex-col items-center">
-          <Link to="/">
+          <Link to="/" className="logo">
             <img
               className="w-32 rounded-[40px]"
               src={logoStore}
@@ -27,11 +49,7 @@ const Footer = () => {
           <div className="flex flex-col items-center gap-4">
             <img className="w-56" src={paymentLogo} alt="paymentLogo" />
             <div className="flex gap-5 text-lg text-gray-400">
-              <ImGithub className="hover:text-white duration-300 cursor-pointer" />
-              <FaYoutube className="hover:text-white duration-300 cursor-pointer" />
-              <FaFacebookF className="hover:text-white duration-300 cursor-pointer" />
-              <FaTwitter className="hover:text-white duration-300 cursor-pointer" />
-              <FaInstagram className="hover:text-white duration-300 cursor-pointer" />
+              {renderSocial}
             </div>
           </div>
         </div>

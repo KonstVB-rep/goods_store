@@ -24,7 +24,7 @@ const ScrollUpArrow = () => {
       onClick={scrollToTop}
       className={`${
         isVisible ? "block" : "hidden"
-      } fixed h-14 w-14 right-10 bottom-[30vh] border-2 border-white rounded-full select-none z-10 overflow-hidden hover:scale-105 focus-visible:scale-105 active:scale-90 duration-200`}
+      } fixed h-14 w-14 right-10 bottom-[30vh] border-2 border-white rounded-full select-none z-10 overflow-hidden hover:scale-105 focus-visible:scale-105`}
     >
       <FaArrowCircleUp
         className="w-full h-full bg-white"

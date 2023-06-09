@@ -8,8 +8,8 @@ import { Button } from "components/UI/Button";
 
 const ProductCard = ({ product }) => {
   const { image, title, oldPrice, price, category, isNew, brand } = product;
-  const navigate = useNavigate();
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleDetails = (product) => {
@@ -60,7 +60,7 @@ const ProductCard = ({ product }) => {
                 dispatch(addToCart(product)) &
                 toast.success(`${title} is added in cart`)
               }
-              styles="rounded-full min-w-[100px] h-full absolute z-2 shrink-0 justify-evenly top-0 transform -translate-x-32 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 focus-visible:translate-x-0 focus-visible:opacity-100 cursor-pointer duration-300"
+              styles="rounded-full min-w-[100px] h-full absolute z-2 shrink-0 justify-evenly top-0 transform -translate-x-32 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 focus-visible:translate-x-0 focus-visible:opacity-100 cursor-pointer"
             >
               <span className="uppercase text-[12px] font-semibold">buy</span>
             </Button>

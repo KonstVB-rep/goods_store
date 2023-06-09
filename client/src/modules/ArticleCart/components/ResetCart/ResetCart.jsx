@@ -16,7 +16,7 @@ const ResetCart = () => {
       <div>
         <button
           onClick={() => dispatch(resetCart())}
-          className="uppercase text-md rounded-3xl bg-red-500 text-white ml-3 py-1 px-6 hover:bg-red-700 focus-visible::bg-red-700 hover:scale-105 focus-visible:scale-105 duration-300 active:scale-95"
+          className="uppercase text-md rounded-3xl bg-red-500 text-white ml-3 py-1 px-6 hover:bg-red-700 focus-visible::bg-red-700 hover:scale-105 focus-visible:scale-105"
         >
           Reset Cart
         </button>

@@ -12,11 +12,11 @@ const Avatar = () => {
   return (
     <>
       <Button
-        className="p-0 border-none flex-shrink-0 h-10 w-10 p-1"
+        className="p-0 border-none flex-shrink-0 h-12 w-12 p-2 rounded-full hover:bg-gray-400 focus-visible:bg-gray-400"
         onClick={() => setOpen(true)}
       >
         <RxAvatar
-          className="w-full h-full rounded-full dark:text-white"
+          className="w-full h-full text-black rounded-full dark:text-white"
           alt="userIcon"
         />
       </Button>

@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo } from "react";
 import { BsSun } from "react-icons/bs";
 import { TbMoonFilled } from "react-icons/tb";
-import { Dropdown } from "antd";
+import { Button, Dropdown } from "antd";
 import { GrSystem } from "react-icons/gr";
 import { useDispatch, useSelector } from "react-redux";
 import { selectTheme, setTheme } from "redux/features/appSlice";
@@ -73,7 +73,7 @@ const ThemeSwitcher = () => {
 
   return (
     <Dropdown menu={{ items }} trigger={["click"]}>
-      <button className="h-10 w-10 p-1.5">
+      <button className="h-12 w-12 p-2 rounded-full hover:bg-gray-400 focus-visible:bg-gray-400">
         {theme === "light" ? (
           <BsSun className="w-full h-full dark:fill-white" />
         ) : (

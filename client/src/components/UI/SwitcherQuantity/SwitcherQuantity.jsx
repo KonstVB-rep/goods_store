@@ -14,14 +14,14 @@ const SwitcherQuantity = memo(({ id, quantity }) => {
         <div className="flex items-center text-sm font-semibold gap-2">
           <button
             onClick={decrementQuantity}
-            className="border-none rounded-md flex-shrink-0 h-10 font-normal text-lg flex outline-none items-center justify-center hover:bg-[#bc2525] #bc2525 hover:text-white focus-visible:bg-[#bc2525] focus-visible:text-white cursor-pointer duration-300 active:scale-90"
+            className="border-none rounded-md flex-shrink-0 h-10 font-normal text-lg flex outline-none items-center justify-center hover:bg-[#bc2525] #bc2525 hover:text-white focus-visible:bg-[#bc2525] focus-visible:text-white cursor-pointer"
           >
             <CiSquareMinus className="w-full h-full" />
           </button>
           <span className="w-5">{quantity}</span>
           <button
             onClick={incrementQuantity}
-            className="border-none rounded-md flex-shrink-0 h-10 font-normal text-lg flex outline-none items-center justify-center hover:bg-[#50ad50] hover:text-white focus-visible:bg-[#50ad50] focus-visible:text-white cursor-pointer duration-300 active:scale-90"
+            className="border-none rounded-md flex-shrink-0 h-10 font-normal text-lg flex outline-none items-center justify-center hover:bg-[#50ad50] hover:text-white focus-visible:bg-[#50ad50] focus-visible:text-white cursor-pointer "
           >
             <CiSquarePlus className="w-full h-full" />
           </button>

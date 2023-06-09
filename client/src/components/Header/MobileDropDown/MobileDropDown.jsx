@@ -11,7 +11,7 @@ const MobileDropDown = () => {
     <>
       <button
         onClick={() => setShow((p) => !p)}
-        className="m-auto flex sm_460:hidden text-black w-12 h-12 sm_460:flex justify-center items-center  dark:text-white"
+        className="m-auto flex sm_460:hidden text-black w-12 h-12 sm_460:flex justify-center items-center dark:text-white hover:bg-gray-400 focus-visible:bg-gray-400"
       >
         {show ? <IoIosArrowUp /> : <IoIosArrowDown />}
       </button>
