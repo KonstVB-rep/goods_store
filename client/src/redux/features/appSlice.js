@@ -4,7 +4,7 @@ const initialState = {
   cart: [],
   userInfo: null,
   theme: 'light',
-  userError: false,
+  error: false,
 };
 const appSlice = createSlice({
   name: 'app',
@@ -51,14 +51,14 @@ const appSlice = createSlice({
     },
     addUser: (state, { payload }) => {
       state.userInfo = payload;
-      state.errorUser = false;
+      state.error = false;
     },
     removeUser: (state) => {
       state.userInfo = null;
-      state.userError = false;
+      state.error = false;
     },
     setErrorUser: (state, { payload }) => {
-      state.userError = payload;
+      state.error = payload;
     },
   },
 });

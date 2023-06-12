@@ -12,13 +12,11 @@ const ThemeSwitcher = () => {
   const theme = useSelector(selectTheme);
 
   useEffect(() => {
-    const isDarkSystemTheme = window.matchMedia(
-      '(prefers-color-scheme: dark)'
-    ).matches;
+    const isDarkSystemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const isDark = theme === 'dark' || isDarkSystemTheme;
     const currTheme = (document.body.dataset.theme = isDark ? 'dark' : 'light');
     dispatch(setTheme(currTheme));
-  }, [dispatch, theme]);
+  }, [dispatch]);
 
   const switchTheme = useCallback(
     (value) => {
@@ -29,9 +27,7 @@ const ThemeSwitcher = () => {
   );
 
   const setSystemTheme = useCallback(() => {
-    const isDark = window.matchMedia('(prefers-color-scheme: dark)')
-      ? 'dark'
-      : 'light';
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)') ? 'dark' : 'light';
     dispatch(setTheme(isDark));
     document.body.dataset.theme = isDark;
   }, [dispatch]);
@@ -40,10 +36,7 @@ const ThemeSwitcher = () => {
     () => [
       {
         label: (
-          <button
-            className="flex gap-2 items-center"
-            onClick={() => switchTheme('light')}
-          >
+          <button className="flex gap-2 items-center" onClick={() => switchTheme('light')}>
             <BsSun className="dark:text-white" />
             <span className="dark:text-white">Light </span>
           </button>
@@ -52,10 +45,7 @@ const ThemeSwitcher = () => {
       },
       {
         label: (
-          <button
-            className="flex gap-2 items-center"
-            onClick={() => switchTheme('dark')}
-          >
+          <button className="flex gap-2 items-center" onClick={() => switchTheme('dark')}>
             <TbMoonFilled className="dark:text-white" />
             <span className="dark:text-white">Dark</span>
           </button>
