@@ -7,6 +7,8 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 const port = process.env.PORT;
+console.log(process.env.PORT);
+console.log(process.env.STRIPE_SECRET_KEY);
 const Stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 app.get("/", (req, res) => {
@@ -14,7 +16,6 @@ app.get("/", (req, res) => {
 });
 
 app.post("/pay", async (req, res) => {
-  console.log(req.body.token);
   await Stripe.charges.create({
     source: req.body.token.id,
     amount: req.body.amount,
