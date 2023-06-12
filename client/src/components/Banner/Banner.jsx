@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { HiArrowRight, HiArrowLeft } from "react-icons/hi";
-import { data } from "assets";
+import React, { useState } from 'react';
+
+import { data } from 'assets';
+import { HiArrowRight, HiArrowLeft } from 'react-icons/hi';
 
 const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

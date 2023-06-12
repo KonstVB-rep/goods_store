@@ -1,9 +1,11 @@
-import React from "react";
-import OrderInfo from "../OrderInfo/OrderInfo";
-import { ContentEmptyCart } from "../ContentEmptyCart";
-import { useSelector } from "react-redux";
-import { selectProductsInCart } from "redux/features/appSlice";
-import { CartList } from "../CartList";
+import React from 'react';
+
+import { useSelector } from 'react-redux';
+import { selectProductsInCart } from 'redux/features/appSlice';
+
+import { CartList } from '../CartList';
+import { ContentEmptyCart } from '../ContentEmptyCart';
+import OrderInfo from '../OrderInfo/OrderInfo';
 
 const CartContent = () => {
   const productsInCart = useSelector(selectProductsInCart);

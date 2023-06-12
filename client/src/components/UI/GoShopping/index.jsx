@@ -1,1 +1,1 @@
-export { default as GoShopping } from "./GoShopping";
+export { default as GoShopping } from './GoShopping';

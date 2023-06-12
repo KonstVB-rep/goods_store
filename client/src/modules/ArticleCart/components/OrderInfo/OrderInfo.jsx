@@ -1,10 +1,11 @@
-import React, { useCallback, useState } from "react";
-import { useSelector } from "react-redux";
-import { toast, ToastContainer } from "react-toastify";
-import StripeCheckout from "react-stripe-checkout";
-import axios from "axios";
-import { Button } from "components/UI/Button";
-import { selectProductsInCart, selectUser } from "redux/features/appSlice";
+import React, { useCallback, useState } from 'react';
+
+import axios from 'axios';
+import { Button } from 'components/UI/Button';
+import { useSelector } from 'react-redux';
+import StripeCheckout from 'react-stripe-checkout';
+import { toast, ToastContainer } from 'react-toastify';
+import { selectProductsInCart, selectUser } from 'redux/features/appSlice';
 
 const OrderInfo = () => {
   const productsInCart = useSelector(selectProductsInCart);
@@ -23,14 +24,13 @@ const OrderInfo = () => {
   const handleCheckout = useCallback(() => {
     if (userInfo) {
       setPay(true);
-      console.log("order ok");
     } else {
-      toast.error("Please sign in to Checkout");
+      toast.error('Please sign in to Checkout');
     }
   }, [userInfo]);
 
   const payment = async (token) => {
-    await axios.post("http://localhost:8000/pay", {
+    await axios.post('http://localhost:8000/pay', {
       amount: totalAmount * 100,
       token: token,
     });
@@ -43,7 +43,7 @@ const OrderInfo = () => {
           cart totals
         </h2>
         <p className="flex items-baseline gap-2 text-base font-bold">
-          Total quantity goods:{" "}
+          Total quantity goods:{' '}
           <span className="font-titleFont font-bold text-lg">{totalCount}</span>
         </p>
         <p className="flex items-start gap-4 text-base">

@@ -1,6 +1,7 @@
-import React from "react";
-import { Banner } from "../components/Banner";
-import { ProductsList } from "../modules/ArticleProductsList";
+import React from 'react';
+
+import { Banner } from '../components/Banner';
+import { ProductsList } from '../modules/ArticleProductsList';
 
 const Home = () => {
   return (

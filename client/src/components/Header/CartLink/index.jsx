@@ -1,1 +1,1 @@
-export { default as CartLink } from "./CartLink";
+export { default as CartLink } from './CartLink';

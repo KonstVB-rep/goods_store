@@ -1,11 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { logoStore } from "assets/index";
-import Nav from "./Nav/Nav";
-import { CartLink } from "./CartLink";
-import { Avatar } from "./Avatar";
-import ThemeSwitcher from "../UI/ThemeSwitcher/ThemeSwitcher";
-import { MobileDropDown } from "./MobileDropDown";
+import React from 'react';
+
+import { logoStore } from 'assets/index';
+import { Link } from 'react-router-dom';
+
+import ThemeSwitcher from '../UI/ThemeSwitcher/ThemeSwitcher';
+
+import { Avatar } from './Avatar';
+import { CartLink } from './CartLink';
+import { MobileDropDown } from './MobileDropDown';
+import Nav from './Nav/Nav';
 
 const Header = () => {
   return (

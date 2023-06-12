@@ -1,12 +1,11 @@
-import { useDispatch } from "react-redux";
 import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
   signOut,
-} from "firebase/auth";
-import { addUser, removeUser } from "redux/features/appSlice";
-import { useCallback } from "react";
+} from 'firebase/auth';
+import { useDispatch } from 'react-redux';
+import { addUser, removeUser, setErrorUser } from 'redux/features/appSlice';
 
 const useAuth = () => {
   const dispatch = useDispatch();
@@ -28,8 +27,7 @@ const useAuth = () => {
         );
       })
       .catch((error) => {
-        const errorCode = error.code;
-        console.log(errorCode);
+        dispatch(setErrorUser(error));
       });
   };
 
@@ -40,7 +38,7 @@ const useAuth = () => {
         dispatch(removeUser());
       })
       .catch((error) => {
-        console.log(error);
+        dispatch(setErrorUser(error));
       });
   };
 

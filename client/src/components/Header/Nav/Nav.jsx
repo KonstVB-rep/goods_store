@@ -1,5 +1,6 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React from 'react';
+
+import { Link, useLocation } from 'react-router-dom';
 
 const Nav = () => {
   const { pathname } = useLocation();
@@ -11,20 +12,20 @@ const Nav = () => {
           Home
         </li>
       </Link>
-      {pathname !== "/" ? (
+      {pathname !== '/' ? (
         <Link to="/#shop">
           <li className="text-base dark:text-white text-black font-bold hover:text-orange-900 hover:underline focus-visible:text-orange-900 focus-visible:underline underline-offset-8 decoration-2 cursor-pointer">
             Shop
           </li>
         </Link>
       ) : (
-        <a href={`#shop`}>
+        <a href={'#shop'}>
           <li className="text-base dark:text-white text-black font-bold hover:text-orange-900 hover:underline focus-visible:text-orange-900 focus-visible:underline underline-offset-8 decoration-2 cursor-pointer">
             Shop
           </li>
         </a>
       )}
-      <a href={`#contacts`}>
+      <a href={'#contacts'}>
         <li className="text-base dark:text-white text-black font-bold hover:text-orange-900 hover:underline focus-visible:text-orange-900 focus-visible:underline underline-offset-8 decoration-2 cursor-pointer">
           Contacts
         </li>

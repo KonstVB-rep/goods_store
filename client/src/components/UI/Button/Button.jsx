@@ -1,6 +1,6 @@
-import React, { memo } from "react";
+import React, { memo } from 'react';
 
-const Button = memo(({ onClick, children, styles = "" }) => {
+const Button = memo(({ onClick, children, styles = '' }) => {
   return (
     <button
       onClick={onClick}

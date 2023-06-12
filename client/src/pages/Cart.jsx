@@ -1,7 +1,8 @@
-import React from "react";
-import { cartBanner } from "../assets";
-import { CartContent } from "../modules/ArticleCart";
-import { ResetCart } from "../modules/ArticleCart";
+import React from 'react';
+
+import { cartBanner } from '../assets';
+import { CartContent } from '../modules/ArticleCart';
+import { ResetCart } from '../modules/ArticleCart';
 
 const Cart = () => {
   return (

@@ -1,11 +1,12 @@
-import React, { useRef } from "react";
-import { Image } from "antd";
-import SwitcherQuantity from "components/UI/SwitcherQuantity/SwitcherQuantity";
-import { RiCloseCircleFill } from "react-icons/ri";
-import { deleteItem } from "redux/features/appSlice";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { AnimatePresence, motion } from "framer-motion";
+import React, { useRef } from 'react';
+
+import { Image } from 'antd';
+import SwitcherQuantity from 'components/UI/SwitcherQuantity/SwitcherQuantity';
+import { AnimatePresence, motion } from 'framer-motion';
+import { RiCloseCircleFill } from 'react-icons/ri';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { deleteItem } from 'redux/features/appSlice';
 
 const box = {
   initial: {
@@ -29,7 +30,7 @@ const CartItem = ({ item }) => {
   const intervalRef = useRef(null);
 
   const handleDetails = (product) => {
-    const rootId = product.title.split("").join("");
+    const rootId = product.title.split('').join('');
     navigate(`/product/${rootId}`, {
       state: {
         item: product,
@@ -51,7 +52,7 @@ const CartItem = ({ item }) => {
       <motion.div
         className="Box"
         initial="initial"
-        animate={remove ? "initial" : "animate"}
+        animate={remove ? 'initial' : 'animate'}
         exit="exit"
         variants={box}
       >

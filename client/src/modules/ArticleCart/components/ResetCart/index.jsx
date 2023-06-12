@@ -1,1 +1,1 @@
-export { default as ResetCart } from "./ResetCart";
+export { default as ResetCart } from './ResetCart';

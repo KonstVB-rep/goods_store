@@ -1,12 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   cart: [],
   userInfo: null,
-  theme: "light",
+  theme: 'light',
+  userError: false,
 };
 const appSlice = createSlice({
-  name: "app",
+  name: 'app',
   initialState,
   reducers: {
     setTheme: (state, { payload }) => {
@@ -50,26 +51,24 @@ const appSlice = createSlice({
     },
     addUser: (state, { payload }) => {
       state.userInfo = payload;
+      state.errorUser = false;
     },
     removeUser: (state) => {
       state.userInfo = null;
+      state.userError = false;
+    },
+    setErrorUser: (state, { payload }) => {
+      state.userError = payload;
     },
   },
 });
 
-export const {
-  addToCart,
-  deleteItem,
-  resetCart,
-  increment,
-  decrement,
-  addUser,
-  removeUser,
-  setTheme,
-} = appSlice.actions;
+export const { addToCart, deleteItem, resetCart, increment, decrement, addUser, removeUser, setTheme, setErrorUser } =
+  appSlice.actions;
 
 export const selectTheme = (state) => state.app.theme;
 export const selectProductsInCart = (state) => state.app.cart;
 export const selectUser = (state) => state.app.userInfo;
+export const selectUserError = (state) => state.app.userError;
 
 export default appSlice.reducer;

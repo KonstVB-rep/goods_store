@@ -1,9 +1,10 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React from 'react';
 
-import useAuth from "./hooks/useAuth";
-import { googleLogo } from "assets";
-import { selectUser } from "redux/features/appSlice";
+import { googleLogo } from 'assets';
+import { useSelector } from 'react-redux';
+import { selectUser } from 'redux/features/appSlice';
+
+import useAuth from './hooks/useAuth';
 
 const SignInOut = () => {
   const userInfo = useSelector(selectUser);

@@ -1,1 +1,1 @@
-export { default as ContentEmptyCart } from "./ContentEmptyCart";
+export { default as ContentEmptyCart } from './ContentEmptyCart';

@@ -1,11 +1,13 @@
-import React from "react";
-import { isRouteErrorResponse, useRouteError } from "react-router-dom";
-import Container from "./Container/Container";
+import React from 'react';
+
+import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
+import { selectUserError } from 'redux/features/appSlice';
+
+import Container from './Container/Container';
 
 const ErrorElement = () => {
   const error = useRouteError();
-
-  console.log(error);
+  const errorUser = selectUserError();
 
   if (isRouteErrorResponse(error)) {
     if (error.status === 404) {
@@ -28,7 +30,11 @@ const ErrorElement = () => {
   return (
     <Container>
       <span>Something went wrong!</span>
-      {error.statusText && <span>Status text: {error.statusText}</span>}
+      {errorUser
+        ? errorUser.statusText && (
+            <span>Status text: {errorUser.statusText}</span>
+          )
+        : error.statusText && <span>Status text: {error.statusText}</span>}
     </Container>
   );
 };

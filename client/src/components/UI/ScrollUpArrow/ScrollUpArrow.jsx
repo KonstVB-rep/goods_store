@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { FaArrowCircleUp } from "react-icons/fa";
+import React, { useEffect, useState } from 'react';
+
+import { FaArrowCircleUp } from 'react-icons/fa';
 
 const ScrollUpArrow = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -16,14 +17,14 @@ const ScrollUpArrow = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleVisibleArrow);
-    return () => window.removeEventListener("scroll", handleVisibleArrow);
+    window.addEventListener('scroll', handleVisibleArrow);
+    return () => window.removeEventListener('scroll', handleVisibleArrow);
   });
   return (
     <button
       onClick={scrollToTop}
       className={`${
-        isVisible ? "block" : "hidden"
+        isVisible ? 'block' : 'hidden'
       } fixed h-14 w-14 right-10 bottom-[30vh] border-2 border-white rounded-full select-none z-10 overflow-hidden hover:scale-105 focus-visible:scale-105`}
     >
       <FaArrowCircleUp

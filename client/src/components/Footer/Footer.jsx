@@ -1,17 +1,18 @@
-import React, { useMemo } from "react";
-import { ImGithub } from "react-icons/im";
+import React, { useMemo } from 'react';
+
+import { nanoid } from '@reduxjs/toolkit';
+import { logoStore, paymentLogo } from 'assets';
+import { BsPaypal, BsPersonFill } from 'react-icons/bs';
 import {
   FaFacebookF,
   FaHome,
   FaInstagram,
   FaTwitter,
   FaYoutube,
-} from "react-icons/fa";
-import { MdLocationOn } from "react-icons/md";
-import { BsPaypal, BsPersonFill } from "react-icons/bs";
-import { logoStore, paymentLogo } from "assets";
-import { Link } from "react-router-dom";
-import { nanoid } from "@reduxjs/toolkit";
+} from 'react-icons/fa';
+import { ImGithub } from 'react-icons/im';
+import { MdLocationOn } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const socialIcons = [
   <ImGithub className="duration-300" />,

@@ -1,5 +1,6 @@
-import React from "react";
-import { Rate } from "antd";
+import React from 'react';
+
+import { Rate } from 'antd';
 
 const ProductDetails = ({
   details: { title, oldPrice, price, des, category },
@@ -11,7 +12,7 @@ const ProductDetails = ({
           {title}
         </h2>
         <p className="text-base text-gray-500 uppercase">
-          Category:{" "}
+          Category:{' '}
           <span className="font-medium text-black uppercase dark:text-white">
             {category}
           </span>

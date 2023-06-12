@@ -1,7 +1,9 @@
-import React, { memo } from "react";
-import { CiSquareMinus, CiSquarePlus } from "react-icons/ci";
-import { decrement, increment } from "../../../redux/features/appSlice";
-import { useDispatch } from "react-redux";
+import React, { memo } from 'react';
+
+import { CiSquareMinus, CiSquarePlus } from 'react-icons/ci';
+import { useDispatch } from 'react-redux';
+
+import { decrement, increment } from '../../../redux/features/appSlice';
 
 const SwitcherQuantity = memo(({ id, quantity }) => {
   const dispatch = useDispatch();

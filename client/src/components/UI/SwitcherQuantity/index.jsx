@@ -1,1 +1,1 @@
-export { default as SwitcherQuantity } from "./SwitcherQuantity";
+export { default as SwitcherQuantity } from './SwitcherQuantity';

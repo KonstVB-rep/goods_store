@@ -1,10 +1,11 @@
-import React from "react";
-import { toast, ToastContainer } from "react-toastify";
-import { useNavigate } from "react-router-dom";
-import IconSale from "components/IconsSale/IconSale";
-import { addToCart } from "redux/features/appSlice";
-import { useDispatch } from "react-redux";
-import { Button } from "components/UI/Button";
+import React from 'react';
+
+import IconSale from 'components/IconsSale/IconSale';
+import { Button } from 'components/UI/Button';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import { addToCart } from 'redux/features/appSlice';
 
 const ProductCard = ({ product }) => {
   const { image, title, oldPrice, price, category, isNew, brand } = product;
@@ -13,7 +14,7 @@ const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
 
   const handleDetails = (product) => {
-    const rootId = product.title.split("").join("");
+    const rootId = product.title.split('').join('');
     navigate(`/product/${rootId}`, {
       state: {
         item: product,

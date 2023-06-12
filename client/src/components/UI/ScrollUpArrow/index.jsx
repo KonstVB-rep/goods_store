@@ -1,1 +1,1 @@
-export { default as ScrollUpArrow } from "./ScrollUpArrow";
+export { default as ScrollUpArrow } from './ScrollUpArrow';

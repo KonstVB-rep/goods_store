@@ -1,8 +1,10 @@
-import React from "react";
-import { addToCart } from "../../../redux/features/appSlice";
-import { toast, ToastContainer } from "react-toastify";
-import { useDispatch } from "react-redux";
-import Button from "../Button/Button";
+import React from 'react';
+
+import { useDispatch } from 'react-redux';
+import { toast, ToastContainer } from 'react-toastify';
+
+import { addToCart } from '../../../redux/features/appSlice';
+import Button from '../Button/Button';
 
 const AddButton = ({ product, quantity }) => {
   const dispatch = useDispatch();

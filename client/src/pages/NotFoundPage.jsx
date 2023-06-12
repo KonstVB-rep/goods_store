@@ -1,5 +1,6 @@
-import React from "react";
-import NotFound from "../assets/404.webp";
+import React from 'react';
+
+import NotFound from '../assets/404.webp';
 
 const NotFoundPage = () => {
   return (

@@ -1,7 +1,8 @@
-import React from "react";
-import { resetCart, selectProductsInCart } from "redux/features/appSlice";
-import GoShopping from "components/UI/GoShopping/GoShopping";
-import { useDispatch, useSelector } from "react-redux";
+import React from 'react';
+
+import GoShopping from 'components/UI/GoShopping/GoShopping';
+import { useDispatch, useSelector } from 'react-redux';
+import { resetCart, selectProductsInCart } from 'redux/features/appSlice';
 
 const ResetCart = () => {
   const dispatch = useDispatch();

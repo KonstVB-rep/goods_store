@@ -1,2 +1,2 @@
-export { ProductImage } from "./components/ProductImage";
-export { ProductDetails } from "./components/ProductDetails";
+export { ProductImage } from './components/ProductImage';
+export { ProductDetails } from './components/ProductDetails';

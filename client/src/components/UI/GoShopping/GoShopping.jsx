@@ -1,6 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { HiOutlineArrowLeft } from "react-icons/hi";
+import React from 'react';
+
+import { HiOutlineArrowLeft } from 'react-icons/hi';
+import { Link } from 'react-router-dom';
 
 const GoShopping = () => {
   return (

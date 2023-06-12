@@ -1,8 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import { useSelector } from "react-redux";
-import { selectProductsInCart } from "redux/features/appSlice";
-import { CartItem } from "../CartItem";
+import { useSelector } from 'react-redux';
+import { selectProductsInCart } from 'redux/features/appSlice';
+
+import { CartItem } from '../CartItem';
 
 const CartList = () => {
   const products = useSelector(selectProductsInCart);
