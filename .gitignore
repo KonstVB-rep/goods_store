@@ -5,7 +5,7 @@
 # dependencies
 .idea
 /client/node_modules
-/client/build
+
 /server/node_modules
 /.pnp
 .pnp.js
@@ -14,7 +14,7 @@
 /coverage
 
 # production
-/build
+build
 
 # misc
 .DS_Store

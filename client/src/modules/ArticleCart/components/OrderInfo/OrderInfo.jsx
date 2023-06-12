@@ -12,14 +12,9 @@ const OrderInfo = () => {
   const [pay, setPay] = useState(false);
   const userInfo = useSelector(selectUser);
 
-  const totalCount = productsInCart.reduce(
-    (acc, item) => acc + item.quantity,
-    0
-  );
+  const totalCount = productsInCart.reduce((acc, item) => acc + item.quantity, 0);
 
-  const totalAmount = productsInCart
-    .reduce((acc, item) => acc + item.quantity * item.price, 0)
-    .toFixed(2);
+  const totalAmount = productsInCart.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2);
 
   const handleCheckout = useCallback(() => {
     if (userInfo) {
@@ -39,19 +34,13 @@ const OrderInfo = () => {
   return (
     <div className="w-full lg:w-1/3 h-fit bg-gray-300 py-6 px-4 rounded-2xl dark:bg-[darkslategrey] dark:text-white">
       <div className=" flex flex-col gap-6 border-b-[1px] border-b-gray-400 pb-6">
-        <h2 className="text-2xl font-medium uppercase font-semibold">
-          cart totals
-        </h2>
+        <h2 className="text-2xl font-medium uppercase font-semibold">cart totals</h2>
         <p className="flex items-baseline gap-2 text-base font-bold">
-          Total quantity goods:{' '}
-          <span className="font-titleFont font-bold text-lg">{totalCount}</span>
+          Total quantity goods: <span className="font-titleFont font-bold text-lg">{totalCount}</span>
         </p>
         <p className="flex items-start gap-4 text-base">
           <span className="font-bold mr-1">Shipping:</span>
-          <span>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos,
-            veritatis.
-          </span>
+          <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, veritatis.</span>
         </p>
       </div>
       <p className="font-semibold flex justify-between my-6 uppercase">
@@ -69,7 +58,7 @@ const OrderInfo = () => {
             label="Pay for the order"
             description={`Your Payment amount is $${totalAmount}`}
             token={payment}
-            email={userInfo.email}
+            email={userInfo?.email}
           />
         </div>
       )}

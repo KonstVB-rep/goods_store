@@ -7,7 +7,7 @@ import Container from './Container/Container';
 
 const ErrorElement = () => {
   const error = useRouteError();
-  const errorUser = selectUserError();
+  const errorApp = selectUserError();
 
   if (isRouteErrorResponse(error)) {
     if (error.status === 404) {
@@ -30,10 +30,8 @@ const ErrorElement = () => {
   return (
     <Container>
       <span>Something went wrong!</span>
-      {errorUser
-        ? errorUser.statusText && (
-            <span>Status text: {errorUser.statusText}</span>
-          )
+      {errorApp
+        ? errorApp.statusText && <span>Status text: {errorApp.statusText}</span>
         : error.statusText && <span>Status text: {error.statusText}</span>}
     </Container>
   );
