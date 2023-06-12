@@ -57,18 +57,18 @@ const appSlice = createSlice({
       state.userInfo = null;
       state.error = false;
     },
-    setErrorUser: (state, { payload }) => {
+    setError: (state, { payload }) => {
       state.error = payload;
     },
   },
 });
 
-export const { addToCart, deleteItem, resetCart, increment, decrement, addUser, removeUser, setTheme, setErrorUser } =
+export const { addToCart, deleteItem, resetCart, increment, decrement, addUser, removeUser, setTheme, setError } =
   appSlice.actions;
 
 export const selectTheme = (state) => state.app.theme;
 export const selectProductsInCart = (state) => state.app.cart;
 export const selectUser = (state) => state.app.userInfo;
-export const selectUserError = (state) => state.app.userError;
+export const selectError = (state) => state.app.error;
 
 export default appSlice.reducer;

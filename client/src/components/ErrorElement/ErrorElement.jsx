@@ -1,13 +1,13 @@
 import React from 'react';
 
 import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
-import { selectUserError } from 'redux/features/appSlice';
+import { selectError } from 'redux/features/appSlice';
 
 import Container from './Container/Container';
 
 const ErrorElement = () => {
   const error = useRouteError();
-  const errorApp = selectUserError();
+  const errorApp = selectError();
 
   if (isRouteErrorResponse(error)) {
     if (error.status === 404) {
