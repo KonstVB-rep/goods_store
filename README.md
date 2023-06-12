@@ -27,3 +27,13 @@ Used by the library:
 - react-icons;
 - @reduxjs/toolkit;
 - tailwindcss;
+
+![image](./client/src/assets/main.webp)
+
+![image](./client/src/assets/products-list.webp)
+
+![image](./client/src/assets/footer.webp)
+
+![image](./client/src/assets/single-product.webp)
+
+![image](./client/src/assets/cart.webp)
