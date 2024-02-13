@@ -13,10 +13,10 @@ const ThemeSwitcher = () => {
 
   useEffect(() => {
     const isDarkSystemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isDark = theme === 'dark' || isDarkSystemTheme;
+    const isDark = theme === 'dark' && isDarkSystemTheme;
     const currTheme = (document.body.dataset.theme = isDark ? 'dark' : 'light');
     dispatch(setTheme(currTheme));
-  }, [dispatch]);
+  }, [theme, dispatch]);
 
   const switchTheme = useCallback(
     (value) => {

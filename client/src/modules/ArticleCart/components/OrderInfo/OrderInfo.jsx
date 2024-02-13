@@ -34,7 +34,7 @@ const OrderInfo = () => {
   return (
     <div className="w-full lg:w-1/3 h-fit bg-gray-300 py-6 px-4 rounded-2xl dark:bg-[darkslategrey] dark:text-white">
       <div className=" flex flex-col gap-6 border-b-[1px] border-b-gray-400 pb-6">
-        <h2 className="text-2xl font-medium uppercase font-semibold">cart totals</h2>
+        <h2 className="text-2xl uppercase font-semibold">cart totals</h2>
         <p className="flex items-baseline gap-2 text-base font-bold">
           Total quantity goods: <span className="font-titleFont font-bold text-lg">{totalCount}</span>
         </p>
