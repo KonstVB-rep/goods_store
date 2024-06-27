@@ -12,7 +12,7 @@ directory - /server
 ### `npm start`
 
 Goods Store React App
-This project [Demo](https://konst1984.github.io/goods_store/).
+This project [Demo](https://konstvb-rep.github.io/goods_store/).
 
 ## Available Scripts
 
